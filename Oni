@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Onikuma Gaming | Official Site</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@500&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --pink-onikuma: #ff007f;
+            --dark-bg: #0a0a0a;
+            --card-bg: #1a1a1a;
+        }
+
+        /* ESTO CORRIGE EL SALTO BRUSCO */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: white;
+            font-family: 'Rajdhani', sans-serif;
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        /* --- ANIMACIONES --- */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .anim-fade { animation: fadeInUp 1.2s ease-out forwards; }
+        .logo-float { animation: float 4s ease-in-out infinite; }
+        .neon-glow { text-shadow: 0 0 10px var(--pink-onikuma), 0 0 20px var(--pink-onikuma); }
+
+        /* --- NAVEGACIÓN --- */
+        nav {
+            background: rgba(0,0,0,0.95);
+            padding: 20px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 2px solid var(--pink-onikuma);
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            gap: 30px;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+
+        nav a:hover { color: var(--pink-onikuma); }
+
+        .container { max-width: 1100px; margin: auto; padding: 80px 20px; }
+
+        h2 { font-family: 'Orbitron', sans-serif; text-align: center; font-size: 2.5rem; margin-bottom: 40px; }
+
+        /* --- PRODUCTOS --- */
+        .grid-productos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: 0.4s;
+            border: 1px solid #333;
+            text-align: center;
+        }
+
+        .card:hover {
+            transform: translateY(-10px) scale(1.03);
+            border-color: var(--pink-onikuma);
+            box-shadow: 0 0 20px rgba(255, 0, 127, 0.4);
+        }
+
+        .card img { width: 100%; height: 220px; object-fit: cover; }
+        .card-info { padding: 15px; }
+        .card-info h3 { color: var(--pink-onikuma); margin: 10px 0; font-family: 'Orbitron', sans-serif; }
+
+        /* --- VIDEOS --- */
+        .grid-videos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+        }
+
+        .video-box {
+            background: #111;
+            padding: 15px;
+            border-radius: 15px;
+            border: 1px solid #333;
+        }
+
+        video { border-radius: 10px; width: 100%; display: block; background: #000; }
+
+        /* --- CONTACTO --- */
+        form { display: flex; flex-direction: column; gap: 15px; max-width: 600px; margin: auto; }
+        input, textarea {
+            background: #222;
+            border: 1px solid #444;
+            padding: 12px;
+            color: white;
+            border-radius: 5px;
+        }
+
+        button {
+            background: var(--pink-onikuma);
+            color: white;
+            border: none;
+            padding: 15px;
+            font-family: 'Orbitron', sans-serif;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            box-shadow: 0 0 15px var(--pink-onikuma);
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="#home">Inicio</a></li>
+            <li><a href="#productos">Productos</a></li>
+            <li><a href="#videos">Videos</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <section id="home" class="container anim-fade">
+        <h2 class="neon-glow">ONIKUMA GAMING</h2>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center;">
+            <div>
+                <h3 style="color: var(--pink-onikuma); font-family: 'Orbitron';">Misión</h3>
+                <p>Brindar a los entusiastas del gaming periféricos de alta precisión que combinan un diseño vanguardista con una comodidad inigualable para sesiones de juego épicas.</p>
+                <br>
+                <h3 style="color: var(--pink-onikuma); font-family: 'Orbitron';">Visión</h3>
+                <p>Liderar el mercado de accesorios gamer ofreciendo tecnología accesible y estilizada que permita a cada jugador expresar su personalidad.</p>
+            </div>
+            <div style="text-align: center;">
+                <img src="Onikuma Logo.jpg" alt="Logo" class="logo-float" style="width: 100%; max-width: 350px;">
+            </div>
+        </div>
+    </section>
+
+    <section id="productos" class="container">
+        <h2>Catálogo Elite</h2>
+        <div class="grid-productos">
+            <div class="card"><img src="Onikuma G32.webp" alt="G32"><div class="card-info"><h3>Teclado G32</h3><p>RGB Pro</p></div></div>
+            <div class="card"><img src="Onikuma MT707.webp" alt="MT707"><div class="card-info"><h3>Teclado MT707</h3><p>Sakura Style</p></div></div>
+            <div class="card"><img src="Onikuma CW902.jpg" alt="CW902"><div class="card-info"><h3>Mouse CW902</h3><p>Optic</p></div></div>
+            <div class="card"><img src="Onikuma Cw925.webp" alt="CW925"><div class="card-info"><h3>Mouse CW925</h3><p>Advanced</p></div></div>
+            <div class="card"><img src="ONIKUMA K10.jpg" alt="K10"><div class="card-info"><h3>Headset K10</h3></div></div>
+            <div class="card"><img src="Onikuma GT808.jpg" alt="GT808"><div class="card-info"><h3>Headset GT808</h3></div></div>
+            <div class="card"><img src="Onikuma T27.webp" alt="T27"><div class="card-info"><h3>Earbuds T27</h3></div></div>
+            <div class="card"><img src="Onikuma T32.jpg" alt="T32"><div class="card-info"><h3>Earbuds T32</h3></div></div>
+        </div>
+    </section>
+
+    <section id="videos" class="container anim-fade">
+        <h2>Media Center</h2>
+        <div class="grid-videos">
+            <div class="video-box">
+                <video controls>
+                    <source src="video_k15.mp4" type="video/mp4">
+                    Tu navegador no soporta video local.
+                </video>
+                <h3 style="text-align:center; color: var(--pink-onikuma); margin-top:15px; font-family: 'Orbitron';">K15 Showcase</h3>
+            </div>
+            <div class="video-box">
+                <video controls>
+                    <source src="video2.mp4" type="video/mp4">
+                    Tu navegador no soporta video local.
+                </video>
+                <h3 style="text-align:center; color: var(--pink-onikuma); margin-top:15px; font-family: 'Orbitron';">Experience</h3>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="container">
+        <h2>Contáctenos</h2>
+        <form action="#">
+            <input type="text" placeholder="Gamertag / Nombre" required>
+            <input type="email" placeholder="Correo Electrónico" required>
+            <textarea rows="5" placeholder="¿Cómo podemos mejorar tu setup?"></textarea>
+            <button type="submit">ENVIAR SOLICITUD</button>
+        </form>
+    </section>
+
+    <footer style="text-align: center; padding: 40px; color: #444;">
+        <p>&copy; 2026 Onikuma Gaming</p>
+    </footer>
+
+</body>
+</html>
